@@ -1,30 +1,30 @@
 import random
 
 
-# 1.Stwórz funkcję, która zwraca sumę 2 liczb
+# 1. Stwórz funkcję, która zwraca sumę 2 liczb
 
 def to_sum_up(digit1, digit2):
     return digit1 + digit2
 
-# 2.Stwórz funkcję, która zwraca róznicę 2 liczb
+# 2. Stwórz funkcję, która zwraca róznicę 2 liczb
 
 
 def difference(digit1, digit2):
     return digit1 - digit2
 
-# 3.Stwórz funkcję, która zwraca iloczyn 2 liczb
+# 3. Stwórz funkcję, która zwraca iloczyn 2 liczb
 
 
 def product(digit1, digit2):
     return  digit1 * digit2
 
-# 4.Stwórz funckję, która zwraca iloraz 2 liczb
+# 4. Stwórz funckję, która zwraca iloraz 2 liczb
 
 
 def quotient(digit1, digit2):
     return digit1 / digit2
 
-# 5.Stwórz funkcję, która zwraca iloraz 2 liczb - zabezpiecz się przed dzieleniem przez 0
+# 5. Stwórz funkcję, która zwraca iloraz 2 liczb - zabezpiecz się przed dzieleniem przez 0
 
 
 def quotient2(digit1, digit2):
@@ -33,7 +33,7 @@ def quotient2(digit1, digit2):
     return digit1 / digit2
 
 
-# 6.Stwórz funkcję, która zwraca listę 5 liczb w zakresie od 50 do 1000
+# 6. Stwórz funkcję, która zwraca listę 5 liczb w zakresie od 50 do 1000
 
 def get_random_digits():
     random_digits = []
@@ -42,7 +42,7 @@ def get_random_digits():
         random_digits.append(digit)
     return random_digits
 
-# 7.Stwórz funkcję, która zwraca posortowaną listę 10 liczb w zakresie od 5 do 1000, rosnąco
+# 7. Stwórz funkcję, która zwraca posortowaną listę 10 liczb w zakresie od 5 do 1000, rosnąco
 
 
 def get_random_digits2():
@@ -54,7 +54,7 @@ def get_random_digits2():
 
 # print(get_random_digits2())
 
-# 8.Stwórz funkcję, która zwraca posortowaną listę 20 liczb w zakresie od 5 do 1000, malejąco
+# 8. Stwórz funkcję, która zwraca posortowaną listę 20 liczb w zakresie od 5 do 1000, malejąco
 
 
 def get_random_digits3():
@@ -67,7 +67,7 @@ def get_random_digits3():
 
 # print(get_random_digits3())
 
-# 9.Stwórz funkcję, która zwraca posortowaną listę n(nie większą niz zakres) liczb w zakresie 0 - 1000, rosnąco
+# 9. Stwórz funkcję, która zwraca posortowaną listę n(nie większą niz zakres) liczb w zakresie 0 - 1000, rosnąco
 
 
 def get_n_random_digits(amount_of_digits):
@@ -92,4 +92,78 @@ def get_n_digits(amount_of_digits):
         digits.add(random.randint(min_range_of_digits, max_range_of_digits))
     return digits
 
-print(get_n_digits(3))
+# print(get_n_digits(3))
+
+# 11. Stwórz funkcję, która zwraca listę liczb od 0 do 10
+
+
+def get_11_digits():
+    list_of_digits = []
+    for digit in range(0, 11):
+        list_of_digits.append(digit)
+    return list_of_digits
+
+# print(get_11_digits())
+
+# 12. Stwórz funkcję, która przyjmuje listę liter i ma je połączyć po '-'
+
+
+def joining_letters(list_of_letters):
+    return '-'.join(list_of_letters)
+
+# print(joining_letters(['a', 'b', 'c']))
+
+# 13. Stwórz funkcję, która przyjmuje listę liczb i zwraca ich sumę
+
+
+def get_sum_of_digits(list_of_digits):
+    return sum(list_of_digits)
+
+# print(get_sum_of_digits([1, 3, 5]))
+
+# 14. Stwórz funkcję, która zwraca najmniejszą wartość z listy
+
+
+def get_min_digit(digits):
+    min_digit = digits[0]
+    for digit in digits:
+        if digit < min_digit:
+            min_digit = digit
+    return min_digit
+
+# print(get_min_digit([1, 0, 4, 6]))
+# print(get_min_digit([1, 0, 4, 6, -6]))
+
+# 15. Stwórz funkcję, która zwraca największą wartość z listy
+
+
+def get_max_digit(digits):
+    max_digit = digits[0]
+    for digit in digits:
+        if digit > max_digit:
+            max_digit = digit
+    return max_digit
+
+
+# print(get_max_digit([1, 0, 4, 6, -6]))
+
+# 16. Stwórz funkcję, która zwraca największą i najmniejszą wartość z listy
+
+
+def get_max_and_min(digits):
+    max_digit = digits[0]
+    min_digit = digits[0]
+    for digit in digits:
+        if digit > max_digit:
+            max_digit = digit
+        if digit < min_digit:
+            min_digit = digit
+    return max_digit, min_digit
+
+
+# print(get_max_and_min([1, 0, 4, 6, -6]))
+
+# 17. Stwórz funkcję, która zwróci słownik wartość-index dla liczb z podanej listy
+
+# def get_value_and_index(digits):
+#     val_and_idx = {}
