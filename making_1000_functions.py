@@ -191,4 +191,18 @@ def hello_user():
 def check_palindrome(word):
     return word.lower() == word.lower()[::-1]
 
-print(check_palindrome('Kayak'))
+# print(check_palindrome('Kayak'))
+
+# 20. Stwórz funkcję, która obliczy średnią arytmetyczną elementów listy
+
+
+def get_avr(digits):
+    counter = 0
+    sum_of_digits = 0
+    for digit in digits:
+        sum_of_digits += digit
+        counter += 1
+    return sum_of_digits / counter
+
+# print(get_avr([1, 2, 3, 4, 5, 6, 7]))
+
