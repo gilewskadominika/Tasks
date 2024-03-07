@@ -165,5 +165,30 @@ def get_max_and_min(digits):
 
 # 17. Stwórz funkcję, która zwróci słownik wartość-index dla liczb z podanej listy
 
-# def get_value_and_index(digits):
-#     val_and_idx = {}
+def get_value_and_index(digits):
+    val_and_idx = {}
+    for val, idx in enumerate(digits):
+        val_and_idx[val] = idx
+    return val_and_idx
+
+# print(get_value_and_index([1, 0, 4, 6, -6]))
+
+# 18. Stwórz funkcję, która wita uzytkownika - nowy(hello stranger!) szefa(hello 'imię'!)
+
+
+def hello_user():
+    name = input('Podaj swoje imię: ')
+    bosses = ['Konrad', 'Karolina', 'Klaudia', 'Dominik']
+    if name not in bosses:
+        return 'Hello stranger!'
+    return f'Hello {name}!'
+
+# print(hello_user())
+
+# 19. Stwórz funkcję, która sprawdzi, czy wyraz jest palindromem
+
+
+def check_palindrome(word):
+    return word.lower() == word.lower()[::-1]
+
+print(check_palindrome('Kayak'))
