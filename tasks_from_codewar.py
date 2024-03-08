@@ -117,3 +117,13 @@ def get_sum_arr(arr):
 
 def sum_array(arr):
     return sum(sorted(arr)[1:-1]) if arr and len(arr) > 1 else 0
+# ------------------------------------------------------------------------------------------------------------
+# Your classmates asked you to copy some paperwork for them. You know that there are 'n'
+# classmates and the paperwork has 'm' pages.
+# Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+
+def counting_pages(n, m):
+    return m * n if n > 0 and m > 0 else 0
+
+print(counting_pages(5, 1))
