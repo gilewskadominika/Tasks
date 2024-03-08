@@ -268,3 +268,35 @@ def get_summmmm(digits):
     return sum / 6
 
 # print(get_summmmm([2, 4, 5, 6, 3, 10, 15]))
+
+# 28. Napisz funkcję, która zsumuje elementy listy - nie uzywając funkcji sum i zwróci tą sumę
+
+
+def get_my_sum(digits):
+    my_sum = 0
+    for digit in digits:
+        my_sum += digit
+    return my_sum
+
+# 29. Napisz funkcję, która zwróci napis złozony z elementów listy i tylko pierwszy element będzie z duzej litery
+
+
+def get_string(words):
+    result = ' '.join(words)
+    result = result.lower()
+    return result.capitalize()
+
+# print(get_string(['Ala', 'Komin', 'na', 'albo']))
+
+# 30. Napisz funkcję, która odejmie elementy listy(o roznych typach danych)
+
+
+def get_diff(elements):
+    result = elements[0]
+    result = int(result)
+    for element in elements[1:]:
+        result -= int(element)
+    return result
+
+# print(get_diff(['1', 1, 5, '10']))
+
