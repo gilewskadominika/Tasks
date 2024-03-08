@@ -206,3 +206,65 @@ def get_avr(digits):
 
 # print(get_avr([1, 2, 3, 4, 5, 6, 7]))
 
+# 21. Stwórz funkcję, która wyświetla imię uzytkownika
+
+
+def print_name():
+    print(f'Imię uzytkownika to {input("podaj imię uzytkowniku: ")}')
+
+# print_name()
+
+# 22. Napisz funkcję, która zwróci typ danych parametru
+
+
+def get_type(arg):
+    return type(arg)
+
+# 23. Napisz funkcję, która zwróci 1 i ostatnią literę wyrazu
+
+
+def get_first_and_last_letter(word):
+    return word[:1], word[-1]
+
+# print(get_first_and_last_letter('Kalina'))
+
+# 24. Napisz funkcję, która policzy ilość wystąpień dla litery a w napisie
+
+
+def counting_a(message):
+    return message.count('a')
+
+# print(counting_a('Konrad ma nierbieskie oczy, Halina się uparła i chce zrobić mu na złość'))
+
+# 25. Napisz funkcję wyliczającą potęgę dla elementów listy
+
+
+def get_squ(digits):
+    result = []
+    for digit in digits:
+        result.append(digit ** 2)
+    return result
+
+# 26. Stwórz funkcję, która podzieli bez reszty podane elementy listy, przez podaną przez uzytkownika liczbę
+
+
+def get_p(digits):
+    result = []
+    dig = input('podaj liczbę')
+    for digit in digits:
+        result.append(digit // dig)
+    return result
+
+# 27. Napisz funkcję wyliczającą potęgę dla elementów listy, zsumuje i podzieli przez 6
+
+
+def get_summmmm(digits):
+    result = []
+    sum = 0
+    for digit in digits:
+        element = digit ** 2
+        result.append(element)
+        sum += element
+    return sum / 6
+
+# print(get_summmmm([2, 4, 5, 6, 3, 10, 15]))
