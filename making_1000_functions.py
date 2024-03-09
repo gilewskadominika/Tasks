@@ -300,3 +300,9 @@ def get_diff(elements):
 
 # print(get_diff(['1', 1, 5, '10']))
 
+# 31. Napisz funkcję, która zwraca długość napisu
+
+
+def get_len_of_text(text):
+    return len(text)
+
