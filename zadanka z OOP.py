@@ -87,3 +87,66 @@ class Employee:
 employee1 = Employee(1, 'Klaudia', 'Kochanie')
 employee1.set_salary(500000000)
 print(employee1._salary)
+
+
+import random
+
+
+random_usdpln_rates = [3.5]
+for _ in range(50):
+    random_usdpln_rates.append(round(random_usdpln_rates[-1] + random.random() * 0.2 - 0.1, 2))
+
+
+class CommandPrompt:
+    def __init__(self, b, s, w):
+        self.b = b
+        self.s = s
+        self.w = w
+
+    def ask(self):
+        while True:
+            choice = input('Decision [b/s/w/buy/sell/wait]: ')
+            if choice not in ('b', 's', 'w', 'buy', 'sell', 'wait', ''):
+                print(f'Invalid choice: {choice}')
+            return choice
+
+
+class Wallet:
+    def __init__(self, start_pln, start_usd):
+        if not isinstance(start_pln, float) or not isinstance(start_usd, float):
+            raise TypeError('Something is no yes!')
+        self.start_pln = start_pln
+        self.start_usd = start_usd
+
+    def convert_pln_to_usd(self, usdpln_rate):
+        self.start_usd += self.start_usd / usdpln_rate
+        self.start_pln = 0
+
+    def convert_usd_to_pln(self, usdpln_rate):
+        self.start_pln += self.start_pln * usdpln_rate
+        self.start_usd = 0
+
+
+cmd = CommandPrompt(['b', 'buy'], ['s', 'sell'], ['w', 'wait'])
+wallet = Wallet(1000.0, 300.0)
+
+
+def main(usdpln_rates):
+
+    for usdpln_rate in usdpln_rates:
+        print(f'Balance: {round(wallet.start_pln, 2)} PLN, ${round(wallet.start_usd, 2)}, rate {usdpln_rate}')
+        while True:
+            try:
+                choice = cmd.ask()
+                break
+            except ValueError as err:
+                print(err)
+        if choice in ('b', 'buy'):
+            wallet.convert_pln_to_usd(usdpln_rate)
+        elif choice in ('s', 'sell'):
+            wallet.convert_usd_to_pln(usdpln_rate)
+    wallet.convert_usd_to_pln(usdpln_rate)
+
+    print(f'Balance: {round(wallet.start_pln, 2)} PLN, ${round(wallet.start_usd, 2)}')
+
+
