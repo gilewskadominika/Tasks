@@ -127,3 +127,120 @@ def counting_pages(n, m):
     return m * n if n > 0 and m > 0 else 0
 
 print(counting_pages(5, 1))
+# ------------------------------------------------------------------------------------------------------------
+# You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+# Array can contain numbers or strings. X can be either.
+# Return true if the array contains the value, false if not.
+
+
+def checking_array(val, arr):
+    for element in arr:
+        if val == element:
+            return True
+    return False
+
+
+def is_elem_in_arr(x, a):
+    return x in a
+# ------------------------------------------------------------------------------------------------------------
+# Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+
+
+def get_str_from_bool(value):
+    return "Yes" if value is True else "No"
+# ------------------------------------------------------------------------------------------------------------
+# Given two integers a and b, which can be positive or negative, find the sum of all the integers
+# between and including them and return it. If the two numbers are equal return a or b.
+# Note: a and b are not ordered!
+
+
+def get_sum_from_a_to_b(a, b):
+    sum_ = 0
+    if a == b:
+        return a
+    elif b > a:
+        for element in range(a, b+1):
+            sum_ += element
+    else:
+        for element in range(b, a+1):
+            sum_ += element
+    return sum_
+# ------------------------------------------------------------------------------------------------------------
+# Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle
+# can be built with the sides of given length and false in any other case.
+# (In this case, all triangles must have surface greater than 0 to be accepted).
+
+
+def check_triangle(a, b, c):
+    if a > b and a > c:
+        if b + c > a:
+            return True
+    elif b > a and b > c:
+        if a + c > b:
+            return True
+    elif c > a or c > b:
+        if a + b > c:
+            return True
+    return False
+# ------------------------------------------------------------------------------------------------------------
+# Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+# The output should be two capital letters with a dot separating them.
+
+
+def get_initials(name):
+    splitted_name = name.split()
+    first = splitted_name[0][:1].upper()
+    second = splitted_name[1][:1].upper()
+    lst = []
+    lst.append(first)
+    lst.append(second)
+    return '.'.join(lst)
+
+# print(get_initials('dupa dupa'))
+
+# def abbrev_name(name):
+#     lst = []
+#     x = name.split()
+#     for i in x:
+#         lst.append(i[0])
+#     return '.'.join(lst).upper()
+#
+# def abbrev_name(name):
+#     return '.'.join(w[0] for w in name.split()).upper()
+# ------------------------------------------------------------------------------------------------------------
+# We need a function that can transform a number (integer) into a string.
+# What ways of achieving this do you know?
+
+
+def int_into_str(digit):
+    return str(digit)
+# ------------------------------------------------------------------------------------------------------------
+# Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+
+def get_even_or_odd(number):
+    return 'Even' if number % 2 == 0 else "odd"
+# ------------------------------------------------------------------------------------------------------------
+# Your task is to make a function that can take any non-negative integer as an argument and return it
+# with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+
+def get_highest_number(number):
+    number = list(str(number))
+    number.sort(reverse=True)
+    return ''.join(number)
+
+# print(get_highest_number(125394))
+
+
+def descending_order(num):
+    return int(''.join(sorted(str(num), reverse=True)))
+# ------------------------------------------------------------------------------------------------------------
+# An isogram is a word that has no repeating letters, consecutive or non-consecutive.
+# Implement a function that determines whether a string that contains only letters is an isogram.
+# Assume the empty string is an isogram. Ignore letter case.
+
+
+def check_isogram(word):
+    return len(word) == len(set(word.lower()))
+# ------------------------------------------------------------------------------------------------------------
